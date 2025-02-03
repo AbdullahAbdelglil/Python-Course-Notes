@@ -8,7 +8,7 @@
 # 7- python uses negative indexing to start reading from end.
 #------------------------------
 
-# Indexing:
+# Indexing:+
 message = "hello world"
 # Reading from start to end, right to left
 print(message[0])
