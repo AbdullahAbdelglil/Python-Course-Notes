@@ -8,7 +8,7 @@
 # 7- python uses negative indexing to start reading from end.
 #------------------------------
 
-# Indexing:+
+# Indexing: accessing elements within string, list, or tuple
 message = "hello world"
 # Reading from start to end, right to left
 print(message[0])
@@ -21,7 +21,7 @@ print(message[-1]) # first character from end
 print(message[-11])
 #------------------------------
 
-# Slicing
+# Slicing: accessing parts of strings, lists, and tuples
 # Syntax:
 # [start:end] -> end not included.
 # [:end] -> start = 0
