@@ -5,7 +5,7 @@
 # 4- count(x) : Return the number of times x appears in the list.
 # 5- extend() : Add all elements of a list to the another list.
 # 6- index(x) : Return the index of the first occurrence of x.
-# 7- insert() : Insert an item at the defined index.
+# 7- insert(index, object) : Insert the object before the specified index.
 # 8- pop(index) : Remove the item at the given position in the list, and return it.
 # 9- remove(x) : Remove the first item from the list whose value is x.
 # 10- reverse() : Reverse the order of the list.
@@ -18,7 +18,7 @@
 # -------------------------
 
 # 1- append()
-list = [1, 2, 3]
+list = [1, 2, 3, 1, 5]
 print(list)
 list.append(4)
 print(list)
@@ -36,7 +36,72 @@ shallow_copy = original_list.copy()
 # Modifying the inner list in the original list
 original_list[2][0] = 'changed'
 
-print(original_list)  # Output: [1, 2, ['changed', 4]]
-print(shallow_copy)   # Output: [1, 2, ['changed', 4]]
+print("original: ", original_list)  # Output: [1, 2, ['changed', 4]]
+print("shallow: ", shallow_copy)   # Output: [1, 2, ['changed', 4]]
+
+# Modifying the shallow_copy
+shallow_copy[0] = "abdullah"
+print("original: ", original_list)
+print("shallow: ", shallow_copy)
 #-------------------------
 
+# 4- count()
+print(list.count(1))
+#-------------------------
+
+# 5- extend()
+a= [1, 2, 3]
+b= [4, 5, 6]
+
+a.extend(b)
+print(a)
+
+b.extend(a)
+print(b)
+#-------------------------
+
+# 6- remove()
+b.remove(6)
+print(b)
+#-------------------------
+
+# 7- sort(): ascending order
+# note: to sort in descending order: sort(reverse = Ture)
+# note: sort() cant use for sorting the list that consists of different elements
+b.sort()
+print(b)
+b.sort(reverse=True)
+print(b)
+#-------------------------
+
+# 8- reverse()
+# important note: the reverse doesn't sort the elems, its just reverse them
+a= [3, 5, 7, 8, 9, 6, -1]
+a.reverse()
+print(a)
+#-------------------------
+
+# 9- clear()
+a.clear()
+print(a)
+#-------------------------
+
+# 10- index()
+a = ["one", "two", "three", "one"]
+print(a.index("one"))
+#print(a.index("zero"))
+#-------------------------
+
+# 11- insert():
+# note -> it doesn't replace the item in the index, its just insert then shift other items
+a.insert(0, "zero")
+print(a)
+a.insert(-1, "zero")
+print(a)
+#-------------------------
+
+#12- pop()
+popped_item = a.pop(0)
+print("popped item: ", popped_item)
+print(a)
+#-------------------------
