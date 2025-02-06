@@ -28,21 +28,34 @@ print(list)
 print(len(list))
 #-------------------------
 
+# very important.
 # 3- copy()
 # meaning of shallow copy
 original_list = [1, 2, [3, 4]]
 shallow_copy = original_list.copy()
+print("original: ", original_list)
+print("shallow: ", shallow_copy)   
 
 # Modifying the inner list in the original list
 original_list[2][0] = 'changed'
-
 print("original: ", original_list)  # Output: [1, 2, ['changed', 4]]
 print("shallow: ", shallow_copy)   # Output: [1, 2, ['changed', 4]]
+# the change will be reflected in the shallow copy as well,
+# because the shallow copy is only a reference to the original list.
 
-# Modifying the shallow_copy
-shallow_copy[0] = "abdullah"
-print("original: ", original_list)
-print("shallow: ", shallow_copy)
+original_list.append(5)
+print("original: ", original_list)  # Output: [1, 2, ['changed', 4], 5]
+print("shallow: ", shallow_copy)   # Output: [1, 2, ['changed', 4]]
+# the change will not be reflected in the shallow copy,
+# because the shallow copy is a new list that has a reference to the original list.
+
+# Note: if u changed a mutable object in the original list, 
+# the change will be reflected in the shallow copy.
+# else, the change will not be reflected.
+
+original_list[0] = 'changed'
+print("original: ", original_list)  # Output: ['changed', 2, ['changed', 4], 5]
+print("shallow: ", shallow_copy)   # Output: [1, 2, ['changed', 4]]
 #-------------------------
 
 # 4- count()
