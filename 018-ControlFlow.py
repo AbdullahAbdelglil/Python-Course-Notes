@@ -28,5 +28,5 @@ else:
     print(f"Hello beskletta {name}")
 # --------------------------
 
-# u can use (and, or) operators for complex logical conditions
+# u can use (and, or, not) operators for complex logical conditions
 # --------------------------
