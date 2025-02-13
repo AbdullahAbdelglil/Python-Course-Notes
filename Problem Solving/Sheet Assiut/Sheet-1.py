@@ -244,3 +244,106 @@ int_part = int(num)
 float_part = num - float(int_part)
 if float_part == 0: print(f"int {int_part}")
 else: print("float %d %f" % (int_part, float_part)) '''
+
+# ---------------------------
+
+# V. Comparison
+''' line = input().split()
+a = int(line[0])
+sign = line[1]
+b = int(line[2])
+
+if sign == ">":
+    if a>b: print("Right")
+    else: print("Wrong")
+    
+elif sign == "<":
+    if a<b: print("Right")
+    else: print("Wrong")
+    
+elif sign == "=" :
+    if a==b: print("Right")
+    else: print("Wrong") '''
+    
+# ---------------------------
+
+# W. Mathematical Expression
+''' line = input().split()
+a = int(line[0])
+sign = line[1]
+b = int(line[2])
+c = int(line[4])
+
+if sign == '+':
+    if a+b == c:
+        print("Yes")
+    else: print(a+b)
+    
+elif sign == '-':
+    if a-b == c:
+        print("Yes")
+    else: print(a-b)
+    
+elif sign == '*':
+    if a*b == c:
+        print("Yes")
+    else: print(a*b) '''
+    
+# ---------------------------
+
+# X. Two intervals
+
+# 1 --------------- 15
+#        5 -------------------- 27
+# intersection = 5 : 15 -> x2 : y1
+# there is no intersection in these cases:
+# if y1 < x2 or x1 > y2
+''' boundries = list(map(int, input().split()))
+
+x1 = boundries[0]
+y1 = boundries[1]
+
+x2 = boundries[2]
+y2 = boundries[3]
+
+
+if y1 < x2 or x1 > y2:
+    print("-1")
+else:
+    x = max(x1, x2)
+    y = min(y1,y2)
+    print(f"{x} {y}") '''
+    
+# ---------------------------
+
+# Y. The last 2 digits
+
+''' nums = list(map(int, input().split()))
+mul = 1
+for i in nums:
+    mul*=i
+
+out = str(mul%100)
+print(out.zfill(2)) '''
+
+# ---------------------------
+
+# Z. Hard Compare
+''' import math 
+
+nums = list(map(int, input().split()))
+a = nums[0]
+b = nums[1]
+c = nums[2]
+d = nums[3]
+
+if b==1 or d ==1: 
+    if a**b > c**d:
+        print("YES")
+    else:
+        print("NO")
+else:
+    if b * math.log2(a) > d * math.log2(c):
+        print("YES")
+    else: 
+        print("NO") '''
