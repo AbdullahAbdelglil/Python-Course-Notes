@@ -116,3 +116,111 @@ n = int(input())
 primes = sieve_of_eratosthenes(n)
 for i in range(len(primes)):
     print(primes[i], end =" ") """
+# -------------------------
+
+# K. Divisors
+''' def get_divisors(number): 
+    divisors = [1,number]
+    for i in range(2, int(number**.5)+1):
+        if number%i == 0:
+            divisors.append(i)
+            div = number//i
+            if(div != i): divisors.append(div)
+
+    divisors.sort()
+    return divisors
+    
+number = int(input())
+divisors = get_divisors(number)
+for i in range(len(divisors)):
+    print(divisors[i])  '''
+# -------------------------
+
+# L. GCD
+
+# My solution:
+''' 
+nums = list (map(int, input().split()))
+n1 = nums[0]
+n2 = nums[1]
+min_num = min(n1, n2)
+max_num = max(n1, n2)
+
+divisors = get_divisors(min_num)
+divisors = divisors[::-1]
+
+for i in range(len(divisors)):
+    num = divisors[i]
+    if max_num % num == 0:
+        print(num)
+        break
+    
+# The best solution (Euclidean algorithm):
+# there is a mathematical property:
+# while a>b : gcd(a,b) = gcd(b, a%b)
+
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+nums = list(map(int, input().split()))
+n1 = nums[0]
+n2 = nums[1]
+min_num = min(n1, n2)
+max_num = max(n1, n2)
+print(gcd(max_num, min_num)) '''
+# -------------------------
+
+# M. Lucky Numbers
+''' lr = list (map(int, input().split()))
+
+lucky = 0
+for i in range(lr[0], lr[1]+1):
+    counter = 0
+    num_str = str(i)
+    for c in num_str:
+        if c== "4" or c== "7":
+            counter +=1
+            
+    if counter == len(num_str) : 
+        lucky=1
+        print(i, end=" ")
+    
+if lucky == 0 :  print(-1) '''
+# -------------------------    
+
+# N. Numbers Histogram
+''' symbol = input()
+n = int(input())
+numbers = list(map(int, input().split()))
+
+for i in numbers:
+    print(symbol*i) '''
+# -------------------------    
+
+# O. Pyramid
+''' n = int(input())
+i = 1
+while i<=n:
+    print("*"*i)
+    i+=1 '''
+# -------------------------
+
+# P. Shape1
+''' n = int(input())
+while n>0:
+    print("*"*n)
+    n-=1 '''
+# -------------------------
+
+# Q. Digits
+''' n = int(input())
+while n>0:
+    number = input()
+    number = number[::-1]
+    for c in number:
+        print(c, end=" ")
+    print()
+    n-=1 '''
+# -------------------------
