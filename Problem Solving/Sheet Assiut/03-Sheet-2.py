@@ -379,9 +379,8 @@ if n>=2:
         i+=1 '''
 # -------------------------
 
-# Z. Three Numbers -> wrong answer
-# basic solution: 3 nested loops o(n*3), but unfortunetly, its not me...
-# i wanna extract an equation for solving it in O(1).
+# Z. Three Numbers 
+
 line = list(map(int, input().split()))
 k = line[0]
 s = line[1]
@@ -392,7 +391,6 @@ for i in range(0, k+1):
         if l>=0 and l+i+j==s:
             counter+=1
                
-
 print(counter)
 
 ''' if s<=k:
