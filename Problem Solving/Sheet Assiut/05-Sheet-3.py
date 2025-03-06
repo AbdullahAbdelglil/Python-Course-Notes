@@ -148,11 +148,88 @@ else:
 # ---------------------------
 
 # O. Fibonacci
-n = int(input())
+''' n = int(input())
 def fib(n):
     fibonacci = [0,0,1]
     for i in range(3,n+1):
         fibonacci.append(fibonacci[i-1] + fibonacci[i-2])
     return fibonacci[n]
 
-print(fib(n))
+print(fib(n)) '''
+# ---------------------------
+
+# P. Minimize Number
+''' n = int(input())
+nums = list(map(int, input().split()))
+counter = 0
+cont = True
+while cont:
+    count = 0
+    for i in range(len(nums)):
+        if nums[i]%2!=0: 
+            cont = False
+            break
+        else: 
+            count+=1
+            nums[i]//=2    
+    if count == len(nums): counter+=1        
+print(counter) '''
+# ---------------------------
+
+# Q. Count Subarrays
+''' def is_non_decreasing(sub_arr):
+    i,j = 0,1
+    while j < len(sub_arr):
+        if sub_arr[j] < sub_arr[i]: return 0
+        i+=1
+        j+=1
+    return 1
+
+
+t = int(input())
+while t:
+    n = int(input())
+    nums = list(map(int, input().split())) 
+    size = 1
+    counter = 0
+    while size<=n:
+        i, j = 0, size
+        while j<=n:
+            sub = nums[i:j]
+            counter+=is_non_decreasing(sub)
+            i+=1
+            j+=1
+        size+=1
+    print(counter)
+    t-=1 '''
+# ---------------------------
+
+# R. Permutation with arrays
+''' n = int(input())
+arr1 = list(map(int, input().split()))
+arr2 = list(map(int, input().split()))
+
+arr1.sort()
+arr2.sort()
+
+if  arr1==arr2: print("yes")
+else: print("no") '''
+# ---------------------------
+
+# S. Search In Matrix --> not completed
+r,c = map(int, input().split())
+
+matrix = []
+for i in range(r):
+    arr = list(map(int, input().split()))
+    matrix.append(arr)
+
+x = int(input())
+found = False
+for arr in matrix:
+    try:
+        arr.index(x)
+    except:
+        print("will take number")
+        
+print("will not take number")
