@@ -216,8 +216,8 @@ if  arr1==arr2: print("yes")
 else: print("no") '''
 # ---------------------------
 
-# S. Search In Matrix --> not completed
-r,c = map(int, input().split())
+# S. Search In Matrix
+""" r,c = map(int, input().split())
 
 matrix = []
 for i in range(r):
@@ -229,7 +229,48 @@ found = False
 for arr in matrix:
     try:
         arr.index(x)
+        found = True
+        break
     except:
-        print("will take number")
-        
-print("will not take number")
+        found = False
+
+if found: 
+    print("will not take number")
+else: 
+    print("will take number") """
+# ---------------------------
+
+# T. Matrix
+""" n = int(input())
+matrix = []
+rdi = 0
+ldi, ldj = 0,n-1
+rd, ld = 0, 0
+
+for i in range(n):
+    arr = list(map(int, input().split()))
+    matrix.append(arr)
+
+while rdi<n:
+    rd+= matrix[rdi][rdi]
+    rdi+=1   
+
+while ldi<n:
+    ld+= matrix[ldi][ldj]
+    ldi+=1   
+    ldj-=1
+
+print(abs(ld-rd)) """
+# ---------------------------
+
+# U. Is B a subsequence of A ?
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+
+for b in B:
+    start = 0
+    try:
+        i = A.index(b, start)
+    except:
+        pass
